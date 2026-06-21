@@ -29,7 +29,7 @@ func main() {
 	darkBlue := color.RGBA{25, 35, 60, 255}
 	draw.Draw(img, img.Bounds(), &image.Uniform{darkBlue}, image.Point{}, draw.Src)
 
-	// 2. Draw rain using goroutines - intermediate flex
+	// 2. Draw rain using goroutines
 	dropChan := make(chan image.Point, dropCount)
 	for i := 0; i < 4; i++ { // 4 workers
 		go func() {
